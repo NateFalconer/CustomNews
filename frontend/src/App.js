@@ -17,7 +17,7 @@ import Navbar2 from "./components/navbar/Navbar2";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
-let apiKey = "3d317330f7724477a808676552aeec15"
+// let apiKey = "3d317330f7724477a808676552aeec15"
 
 class App extends Component {
   state = {
@@ -33,20 +33,20 @@ class App extends Component {
     this.apiCall(user)
   }
 
-   apiCall = async (user) => {
-    var url = `https://newsapi.org/v2/top-headlines?country=${user.data.country}&category=health&apiKey=${apiKey}`
-    // var usUrl = `http://newsapi.org/v2/top-headlines?country=us&category=health&apiKey=${apiKey}`
-    let newsEvents = await axios.get(url);
-    // if(newsEvents.data.length === 0) {
-    //   newsEvents = await axios.get(usUrl);
-    // }
-    console.log(newsEvents.data);
+  //  apiCall = async (user) => {
+  //   var url = `https://newsapi.org/v2/top-headlines?country=${user.data.country}&category=health&apiKey=${apiKey}`
+  //   // var usUrl = `http://newsapi.org/v2/top-headlines?country=us&category=health&apiKey=${apiKey}`
+  //   let newsEvents = await axios.get(url);
+  //   // if(newsEvents.data.length === 0) {
+  //   //   newsEvents = await axios.get(usUrl);
+  //   // }
+  //   console.log(newsEvents.data);
 
-    this.setState({
-      newsEvents: newsEvents.data,
-      ready: true
-    });
-  }
+  //   this.setState({
+  //     newsEvents: newsEvents.data,
+  //     ready: true
+  //   });
+  // }
 
   setUser = user => this.setState(user);
 
